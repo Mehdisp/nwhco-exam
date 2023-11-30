@@ -8,16 +8,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
 
-  runApp(const LookeyApplication());
+  runApp(const LookyApplication());
 }
 
-class LookeyApplication extends StatelessWidget {
-  const LookeyApplication({super.key});
+class LookyApplication extends StatelessWidget {
+  const LookyApplication({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lookey',
+      title: 'Looky',
       theme: AppTheme.def(),
       debugShowCheckedModeBanner: false,
       locale: Locale('en', 'US'),
@@ -25,3 +25,4 @@ class LookeyApplication extends StatelessWidget {
     );
   }
 }
+

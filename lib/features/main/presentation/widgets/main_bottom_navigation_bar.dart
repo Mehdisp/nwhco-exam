@@ -13,12 +13,13 @@ class MainBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return SizedBox(
       height: 68,
       width: double.infinity,
       child: ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(40),
+        ),
         child: BottomNavigationBar(
           iconSize: 24,
           currentIndex: 0,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nwhco_exam/features/home/presentation/widgets/barber_list_item.dart';
 
+import '../widgets/barber_list_item.dart';
 import '../widgets/home_banner.dart';
 import '../widgets/home_service_button.dart';
 import '../widgets/search_field.dart';
@@ -53,12 +52,15 @@ class HomePage extends StatelessWidget {
               fontSize: 50,
               fontWeight: FontWeight.w700,
               letterSpacing: 6,
+              height: 1
             ),
           ),
           Text(
             'Fastest Way to Find Barbers',
             style: TextStyle(
+              color: Color(0x8A95ABCC),
               fontSize: 14,
+              height: 1,
             ),
           ),
           const SizedBox(height: 30),
@@ -108,14 +110,15 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 23),
+          const SizedBox(height: 16),
           Row(
             children: [
               OutlinedButton(
                 onPressed: () {},
                 child: Text('Shops'),
                 style: OutlinedButton.styleFrom(
-                    backgroundColor: Color(0xFFAA935F)),
+                  backgroundColor: Color(0xFFAA935F),
+                ),
               ),
               const SizedBox(width: 8),
               OutlinedButton(

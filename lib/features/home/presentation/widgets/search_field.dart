@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 typedef OnTextChanged = void Function(String);
 
@@ -26,13 +27,20 @@ class SearchField extends StatelessWidget {
             color: themeData.primaryColor,
           ),
           margin: EdgeInsets.only(right: 6),
-          child: Icon(Icons.search),
+          alignment: Alignment.center,
+          child: SvgPicture.asset(
+            'assets/svg/search.svg',
+            fit: BoxFit.contain,
+          ),
         ),
         suffixIconConstraints: BoxConstraints(
           maxWidth: 48,
           maxHeight: 48,
         ),
-        hintStyle: TextStyle(fontSize: 14),
+        hintStyle: TextStyle(
+          fontSize: 14,
+          color: Color(0xFFC7CDD9),
+        ),
       ),
     );
   }

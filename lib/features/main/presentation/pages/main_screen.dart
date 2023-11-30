@@ -11,7 +11,6 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(

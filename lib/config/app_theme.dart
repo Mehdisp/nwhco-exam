@@ -20,15 +20,21 @@ class AppTheme {
       constraints: BoxConstraints(minHeight: 48),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: Color(0x0000001A), width: 1),
+        borderSide: BorderSide(color: Color(0x1A00001A), width: 1),
       ),
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
-        minimumSize: Size(44, 44),
+        minimumSize: Size(44, 48),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
+        textStyle: TextStyle(
+          color: Color(0xFFF8FAFF),
+          fontWeight: FontWeight.w500,
+          fontSize: 16,
+        )
       ),
     ),
     buttonTheme: ButtonThemeData(

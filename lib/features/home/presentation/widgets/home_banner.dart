@@ -47,11 +47,14 @@ class HomeBanner extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     'Find the nearest Barbar Shop to you on the map',
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white.withOpacity(0.8),
+                    ),
                   ),
                   const SizedBox(height: 16),
                   FilledButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     child: Text('View the map'),
                   ),
                 ],

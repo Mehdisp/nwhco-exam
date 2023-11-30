@@ -22,7 +22,10 @@ class HomeServiceButton extends StatelessWidget {
           Container(
             height: 45,
             alignment: Alignment.center,
-            child: SvgPicture.asset(iconPath),
+            child: SvgPicture.asset(
+              iconPath,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(height: 8),
           Text(
