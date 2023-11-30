@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static final _primaryColor = Colors.orange;
-  static final _secondaryColor = Colors.yellow;
+  static final _primaryColor = Color(0xFF6440FE);
+  static final _secondaryColor = Color(0xFF6440FE);
+  static final _backgroundColor = Color(0xFF1F2A40);
 
   static ThemeData _baseTheme = ThemeData(
     useMaterial3: true,
@@ -44,47 +45,49 @@ class AppTheme {
         ),
       ),
     ),
-    pageTransitionsTheme: PageTransitionsTheme(
-      builders: {
-        TargetPlatform.windows: CupertinoPageTransitionsBuilder(),
-      },
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 0,
+      enableFeedback: true,
+      showUnselectedLabels: false,
+      showSelectedLabels: true,
+      type: BottomNavigationBarType.fixed,
     ),
   );
 
-  static ThemeData light() {
-    return _baseTheme.copyWith(
-      brightness: Brightness.light,
-      colorScheme: ColorScheme.light(
-        primary: _primaryColor,
-        secondary: _secondaryColor,
-      ),
-      dividerTheme: _baseTheme.dividerTheme.copyWith(
-        color: Colors.grey.shade200,
-      ),
-      inputDecorationTheme: _baseTheme.inputDecorationTheme.copyWith(
-        fillColor: Colors.grey.shade200,
-      ),
-      bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: Colors.white,
-      ),
-    );
-  }
-
-  static ThemeData dark() {
+  static ThemeData def() {
     return _baseTheme.copyWith(
       brightness: Brightness.dark,
+      scaffoldBackgroundColor: _backgroundColor,
       colorScheme: ColorScheme.dark(
         primary: _primaryColor,
         secondary: _secondaryColor,
+        background: _backgroundColor,
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
+        onBackground: Colors.white,
       ),
       dividerTheme: _baseTheme.dividerTheme.copyWith(
-        color: Colors.white12,
+        color: Colors.grey.shade700,
       ),
       inputDecorationTheme: _baseTheme.inputDecorationTheme.copyWith(
-        fillColor: Colors.grey.shade800,
+        fillColor: Colors.white,
       ),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: _backgroundColor,
+      ),
+      textTheme: _baseTheme.textTheme.apply(
+        bodyColor: Colors.white,
+      ),
+      bottomNavigationBarTheme: _baseTheme.bottomNavigationBarTheme.copyWith(
+        backgroundColor: Colors.white,
+        unselectedItemColor: Color(0xFFC7CDD9),
+        selectedItemColor: _backgroundColor,
+        selectedIconTheme: IconThemeData(color: _backgroundColor),
+        selectedLabelStyle: TextStyle(
+          color: _backgroundColor,
+          fontSize: 8,
+          height: 2,
+        ),
       ),
     );
   }
