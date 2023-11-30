@@ -13,16 +13,19 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      body: Navigator(
-        key: _navigatorKey,
-        initialRoute: 'home',
-        onGenerateRoute: (settings) {
-          final page = routes[settings.name] ?? notFoundPage;
-          return MaterialPageRoute(
-            settings: settings,
-            builder: page,
-          );
-        },
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Navigator(
+          key: _navigatorKey,
+          initialRoute: 'home',
+          onGenerateRoute: (settings) {
+            final page = routes[settings.name] ?? notFoundPage;
+            return MaterialPageRoute(
+              settings: settings,
+              builder: page,
+            );
+          },
+        ),
       ),
       bottomNavigationBar: MainBottomNavigationBar(
         onItemClick: (index) {},

@@ -19,20 +19,29 @@ class AppTheme {
       contentPadding: EdgeInsets.symmetric(horizontal: 16),
       constraints: BoxConstraints(minHeight: 48),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(24),
-        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(16),
+        borderSide: BorderSide(color: Color(0x0000001A), width: 1),
+      ),
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        minimumSize: Size(44, 44),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
       ),
     ),
     buttonTheme: ButtonThemeData(
-      height: 48,
+      height: 44,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(12),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: _primaryColor,
-        side: BorderSide(color: _primaryColor),
+        foregroundColor: Colors.white,
+        side: BorderSide(color: Colors.white),
+        minimumSize: Size(31, 31),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
