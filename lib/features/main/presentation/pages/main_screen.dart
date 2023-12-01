@@ -7,6 +7,7 @@ class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   final _navigatorKey = GlobalKey<NavigatorState>();
+
   NavigatorState get navigator => _navigatorKey.currentState!;
 
   @override
@@ -27,11 +28,13 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: MainBottomNavigationBar(
+        /// to navigate between pages call [navigator.push]
         onItemClick: (index) {},
       ),
     );
   }
 
+  /// returns a default widget to show when pushed route name not exists is [routes]
   Widget notFoundPage(BuildContext context) {
     return Center(
       child: Text('Page not found!'),
