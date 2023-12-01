@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../widgets/main_bottom_navigation_bar.dart';
 import '/routes.dart';
@@ -8,6 +7,7 @@ class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
   final _navigatorKey = GlobalKey<NavigatorState>();
+  NavigatorState get navigator => _navigatorKey.currentState!;
 
   @override
   Widget build(BuildContext context) {

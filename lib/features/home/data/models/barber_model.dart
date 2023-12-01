@@ -17,15 +17,15 @@ class BarberModel extends Barber {
   factory BarberModel.fromJson(Map<String, dynamic> json) {
     return BarberModel(
       slug: json['slug'],
-      fullName: json['fullName'],
-      isShop: json['isShop'],
+      fullName: json['fullname'],
+      isShop: json['is_shop'],
       avatar: json['avatar'],
       address: json['address'],
       lat: json['lat'],
       lon: json['lon'],
       rate: json['rate'],
       distance: json['distance'],
-      isBookmarked: json['isBookmarked'],
+      isBookmarked: json['is_bookmarked'],
     );
   }
 }

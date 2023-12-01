@@ -1,16 +1,12 @@
+import '../../domain/entities/barber.dart';
 import 'barber_model.dart';
 
-class BarbersResponse {
-  int count;
-  String? next;
-  String? previous;
-  List<BarberModel> results;
-
+class BarbersResponse extends BarbersList {
   BarbersResponse({
-    required this.count,
-    required this.next,
-    required this.previous,
-    required this.results,
+    required super.count,
+    required super.next,
+    required super.previous,
+    required super.barbers,
   });
 
   factory BarbersResponse.fromJson(Map<String, dynamic> json) {
@@ -18,7 +14,7 @@ class BarbersResponse {
       count: json['count'],
       next: json['next'],
       previous: json['previous'],
-      results: (json['results'] as List<dynamic>)
+      barbers: (json['results'] as List<dynamic>)
           .map((e) => BarberModel.fromJson(e))
           .toList(),
     );

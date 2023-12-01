@@ -16,6 +16,7 @@ class SearchField extends StatelessWidget {
     final themeData = Theme.of(context);
     return TextField(
       onChanged: onTextChanged,
+      style: TextStyle(color: Colors.black54),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
         hintText: 'Search in Barbers, Location and services ...',

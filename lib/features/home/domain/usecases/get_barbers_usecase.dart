@@ -10,7 +10,8 @@ class GetBarbersUseCase {
 
   GetBarbersUseCase(this.repository);
 
-  Future<Result<List<Barber>>> call() {
-    return repository.barbers();
+  /// get and return barbers/shops from repository
+  Future<Result<BarbersList>> call({int page = 1, List<String>? ids}) {
+    return repository.barbers(page: page, ids: ids);
   }
 }

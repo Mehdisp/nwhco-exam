@@ -1,5 +1,22 @@
 import 'package:equatable/equatable.dart';
 
+class BarbersList extends Equatable {
+  final int count;
+  final String? next;
+  final String? previous;
+  final List<Barber> barbers;
+
+  BarbersList({
+    required this.count,
+    required this.barbers,
+    required this.next,
+    required this.previous,
+  });
+
+  @override
+  List<Object?> get props => [count, next, barbers];
+}
+
 class Barber extends Equatable {
   final String slug;
   final String fullName;

@@ -10,6 +10,7 @@ class GetServicesUseCase {
 
   GetServicesUseCase(this.repository);
 
+  /// get and return services from repository
   Future<Result<List<Service>>> call() {
     return repository.services();
   }

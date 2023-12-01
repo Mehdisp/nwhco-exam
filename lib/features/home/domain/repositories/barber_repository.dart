@@ -6,5 +6,5 @@ import '../entities/service.dart';
 abstract class BarberRepository extends BaseRepository {
   Future<Result<List<Service>>> services();
 
-  Future<Result<List<Barber>>> barbers({bool? isShop, List<String>? ids});
+  Future<Result<BarbersList>> barbers({int page = 1, List<String>? ids});
 }

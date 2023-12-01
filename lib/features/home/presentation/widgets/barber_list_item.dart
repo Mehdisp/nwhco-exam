@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
+import '../../domain/entities/barber.dart';
 
 class BarberListItem extends StatelessWidget {
-  const BarberListItem({super.key});
+  final Barber barber;
+
+  const BarberListItem(this.barber, {super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      // height: 97 + 14,
+      padding: EdgeInsets.all(7),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black26, width: 2),
         borderRadius: BorderRadius.circular(18),
       ),
-      padding: EdgeInsets.all(7),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            child: Image.asset(
-              'assets/images/image_1.jpg',
+            child: CachedNetworkImage(
+              imageUrl: barber.avatar,
               fit: BoxFit.cover,
               width: 93,
               height: 93,
@@ -36,22 +40,27 @@ class BarberListItem extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'William Rojer Salon',
+                      barber.fullName,
+                      maxLines: 1,
                       style: TextStyle(
                         color: Color(0xFF1F2A40),
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.w700,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     const SizedBox(width: 4),
-                    SvgPicture.asset('assets/svg/verified.svg'),
+
+                    if (barber.isShop)
+                      SvgPicture.asset('assets/svg/verified.svg'),
+
                     Spacer(),
                     Icon(
                       Icons.star_border_rounded,
                       color: Color(0xFFD3BA4C),
                     ),
                     Text(
-                      '4.1',
+                      barber.rate.toStringAsFixed(1),
                       style: TextStyle(
                         color: Color(0xFFD3BA4C),
                         fontSize: 12,
@@ -72,23 +81,25 @@ class BarberListItem extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '5.0 Kms',
+                      barber.distance.toStringAsFixed(1) + ' Kms',
                       style: TextStyle(
                         color: theme.primaryColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
-                      ' | Pirozzi street, bolvar ...',
+                      ' | ${barber.address}',
+                      maxLines: 1,
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF808A9E)),
-                    )
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF808A9E),
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
